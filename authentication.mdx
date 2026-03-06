@@ -1,0 +1,42 @@
+---
+title: Authentication
+description: "How to authenticate with the Gigstack API"
+---
+
+# Authentication
+
+The Gigstack API uses **Bearer token** authentication. Include your API token in the `Authorization` header of every request.
+
+```bash
+curl -X GET https://api.gigstack.io/v2/clients \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+## Getting Your Token
+
+<Steps>
+  <Step title="Log in">
+    Go to [app.gigstack.pro](https://app.gigstack.pro)
+  </Step>
+  <Step title="Open API Settings">
+    Navigate to **Settings** → **API** tab
+  </Step>
+  <Step title="Generate">
+    Click **Generate Token** and copy it immediately
+  </Step>
+</Steps>
+
+<Warning>
+  Your API token has the same permissions as your account. Never share it publicly or commit it to source control.
+</Warning>
+
+## Multi-team Access (gigstack Connect)
+
+If your plan supports **Proveedores**, access other teams' data with the `team` query parameter:
+
+```bash
+curl -X GET "https://api.gigstack.io/v2/clients?team=team_abc123" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+The `team` parameter accepts the ID of any team under your billing account.

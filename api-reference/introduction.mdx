@@ -1,33 +1,61 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: API Reference
+description: "Complete reference for all Gigstack API endpoints"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+# API Reference
 
-## Welcome
+The Gigstack API v2 provides endpoints for managing clients, invoices, payments, receipts, services, teams, and more.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## Base URL
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+```
+https://api.gigstack.io/v2
+```
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All endpoints require a Bearer token in the `Authorization` header:
+
+```
+Authorization: Bearer YOUR_API_TOKEN
+```
+
+## Pagination
+
+List endpoints support cursor-based pagination:
+
+| Parameter | Type   | Description |
+|-----------|--------|-------------|
+| `limit`   | number | Results per page (default: 25, max: 100) |
+| `next`    | string | Cursor for next page (from previous response) |
+| `order_by`| string | Field to sort by (e.g., `created_at`) |
+| `sort`    | string | Sort direction: `asc` or `desc` |
+
+## Filtering
+
+Most list endpoints support date range filtering:
+
+| Parameter     | Type   | Description |
+|---------------|--------|-------------|
+| `created_gte` | number | Created at or after (Unix timestamp) |
+| `created_lte` | number | Created at or before (Unix timestamp) |
+
+## Error Responses
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+{
+  "success": false,
+  "message": "Validation error",
+  "errors": [
+    { "field": "tax_id", "message": "Invalid RFC format" }
+  ]
+}
 ```
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad request / validation error |
+| 401 | Unauthorized — invalid or missing token |
+| 404 | Resource not found |
+| 500 | Internal server error |

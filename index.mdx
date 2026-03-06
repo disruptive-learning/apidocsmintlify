@@ -1,97 +1,46 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Gigstack API
+description: "Automate revenue management with the Gigstack API"
 ---
 
-## Setting up
+# Gigstack API v2
 
-Get your documentation site up and running in minutes.
+Comprehensive API for invoice, payment, client, and service management with **Mexican tax compliance (SAT)**.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Mexican Tax Compliance" icon="building-columns">
+    SAT, RFC, CFDI — fully compliant digital invoicing
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Invoice Lifecycle" icon="file-invoice">
+    Creation, stamping, cancellation, payment complements
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Payment Processing" icon="credit-card">
+    Stripe, PayPal, MercadoPago, Conekta, OpenPay, and more
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Automations" icon="robot">
+    Event-driven receipts, invoices, and complements
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Base URL
 
-Everything you need to create world-class documentation.
+```
+https://api.gigstack.io/v2
+```
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## Response Format
 
-## Need inspiration?
+All responses follow a consistent format:
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+```json
+{
+  "success": true,
+  "message": "Description of action",
+  "data": {},
+  "timestamp": 1768240724433
+}
+```
+
+<Note>
+  Test mode is supported throughout the API. Use `livemode: false` to work with sandbox data and test payment processor keys.
+</Note>

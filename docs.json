@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Gigstack API",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#8666FF",
+    "light": "#A78BFA",
+    "dark": "#6D4AFF"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -14,55 +14,93 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
+            "group": "Getting Started",
+            "pages": ["index", "authentication", "quickstart"]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
+            "pages": ["api-reference/introduction"]
+          },
+          {
+            "group": "Clients",
             "pages": [
-              "api-reference/introduction"
+              { "openapi": "GET /clients" },
+              { "openapi": "POST /clients" },
+              { "openapi": "GET /clients/{id}" },
+              { "openapi": "PUT /clients/{id}" },
+              { "openapi": "DELETE /clients/{id}" }
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Invoices",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              { "openapi": "GET /invoices" },
+              { "openapi": "POST /invoices/income" },
+              { "openapi": "GET /invoices/{id}" },
+              { "openapi": "POST /invoices/{id}/cancel" }
+            ]
+          },
+          {
+            "group": "Payments",
+            "pages": [
+              { "openapi": "GET /payments" },
+              { "openapi": "POST /payments" },
+              { "openapi": "GET /payments/{id}" },
+              { "openapi": "PUT /payments/{id}" }
+            ]
+          },
+          {
+            "group": "Receipts",
+            "pages": [
+              { "openapi": "GET /receipts" },
+              { "openapi": "POST /receipts" },
+              { "openapi": "GET /receipts/{id}" }
+            ]
+          },
+          {
+            "group": "Services",
+            "pages": [
+              { "openapi": "GET /services" },
+              { "openapi": "POST /services" },
+              { "openapi": "GET /services/{id}" },
+              { "openapi": "PUT /services/{id}" },
+              { "openapi": "DELETE /services/{id}" }
+            ]
+          },
+          {
+            "group": "Teams",
+            "pages": [
+              { "openapi": "GET /teams" },
+              { "openapi": "POST /teams" },
+              { "openapi": "GET /teams/{id}" },
+              { "openapi": "PUT /teams/{id}" }
+            ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              { "openapi": "GET /users" },
+              { "openapi": "GET /users/{id}" }
+            ]
+          },
+          {
+            "group": "Documents",
+            "pages": [
+              { "openapi": "GET /documents/{id}/pdf" },
+              { "openapi": "GET /documents/{id}/xml" }
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              { "openapi": "GET /webhooks" },
+              { "openapi": "POST /webhooks" },
+              { "openapi": "DELETE /webhooks/{id}" }
             ]
           }
         ]
@@ -71,19 +109,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Dashboard",
+          "href": "https://app.gigstack.pro",
+          "icon": "gauge"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Get API Key",
+          "href": "https://app.gigstack.pro/settings?tab=api",
+          "icon": "key"
         }
       ]
     }
@@ -96,32 +129,31 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:soporte@gigstack.pro"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.gigstack.pro"
+    }
+  },
+  "openapi": "openapi.yaml",
+  "api": {
+    "baseUrl": "https://api.gigstack.io/v2",
+    "auth": {
+      "method": "bearer",
+      "name": "Authorization"
     }
   },
   "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/gigstackpro",
+      "linkedin": "https://linkedin.com/company/gigstack",
+      "github": "https://github.com/disruptive-learning"
     }
   }
 }
