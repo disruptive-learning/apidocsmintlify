@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Gigstack API",
   "colors": {
-    "primary": "#8666FF",
-    "light": "#A78BFA",
-    "dark": "#6D4AFF"
+    "primary": "#044737",
+    "light": "#a8ff9a",
+    "dark": "#044737"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -15,7 +15,11 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["index", "authentication", "quickstart"]
+            "pages": [
+              "index",
+              "authentication",
+              "quickstart"
+            ]
           }
         ]
       },
@@ -24,83 +28,149 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["api-reference/introduction"]
+            "pages": [
+              "api-reference/introduction"
+            ]
           },
           {
             "group": "Clients",
             "pages": [
-              { "openapi": "GET /clients" },
-              { "openapi": "POST /clients" },
-              { "openapi": "GET /clients/{id}" },
-              { "openapi": "PUT /clients/{id}" },
-              { "openapi": "DELETE /clients/{id}" }
+              {
+                "openapi": "GET /clients"
+              },
+              {
+                "openapi": "POST /clients"
+              },
+              {
+                "openapi": "GET /clients/{id}"
+              },
+              {
+                "openapi": "PUT /clients/{id}"
+              },
+              {
+                "openapi": "DELETE /clients/{id}"
+              }
             ]
           },
           {
             "group": "Invoices",
             "pages": [
-              { "openapi": "GET /invoices" },
-              { "openapi": "POST /invoices/income" },
-              { "openapi": "GET /invoices/{id}" },
-              { "openapi": "POST /invoices/{id}/cancel" }
+              {
+                "openapi": "GET /invoices"
+              },
+              {
+                "openapi": "POST /invoices/income"
+              },
+              {
+                "openapi": "GET /invoices/{id}"
+              },
+              {
+                "openapi": "POST /invoices/{id}/cancel"
+              }
             ]
           },
           {
             "group": "Payments",
             "pages": [
-              { "openapi": "GET /payments" },
-              { "openapi": "POST /payments" },
-              { "openapi": "GET /payments/{id}" },
-              { "openapi": "PUT /payments/{id}" }
+              {
+                "openapi": "GET /payments"
+              },
+              {
+                "openapi": "POST /payments"
+              },
+              {
+                "openapi": "GET /payments/{id}"
+              },
+              {
+                "openapi": "PUT /payments/{id}"
+              }
             ]
           },
           {
             "group": "Receipts",
             "pages": [
-              { "openapi": "GET /receipts" },
-              { "openapi": "POST /receipts" },
-              { "openapi": "GET /receipts/{id}" }
+              {
+                "openapi": "GET /receipts"
+              },
+              {
+                "openapi": "POST /receipts"
+              },
+              {
+                "openapi": "GET /receipts/{id}"
+              }
             ]
           },
           {
             "group": "Services",
             "pages": [
-              { "openapi": "GET /services" },
-              { "openapi": "POST /services" },
-              { "openapi": "GET /services/{id}" },
-              { "openapi": "PUT /services/{id}" },
-              { "openapi": "DELETE /services/{id}" }
+              {
+                "openapi": "GET /services"
+              },
+              {
+                "openapi": "POST /services"
+              },
+              {
+                "openapi": "GET /services/{id}"
+              },
+              {
+                "openapi": "PUT /services/{id}"
+              },
+              {
+                "openapi": "DELETE /services/{id}"
+              }
             ]
           },
           {
             "group": "Teams",
             "pages": [
-              { "openapi": "GET /teams" },
-              { "openapi": "POST /teams" },
-              { "openapi": "GET /teams/{id}" },
-              { "openapi": "PUT /teams/{id}" }
+              {
+                "openapi": "GET /teams"
+              },
+              {
+                "openapi": "POST /teams"
+              },
+              {
+                "openapi": "GET /teams/{id}"
+              },
+              {
+                "openapi": "PUT /teams/{id}"
+              }
             ]
           },
           {
             "group": "Users",
             "pages": [
-              { "openapi": "GET /users" },
-              { "openapi": "GET /users/{id}" }
+              {
+                "openapi": "GET /users"
+              },
+              {
+                "openapi": "GET /users/{id}"
+              }
             ]
           },
           {
             "group": "Documents",
             "pages": [
-              { "openapi": "GET /documents/{id}/pdf" },
-              { "openapi": "GET /documents/{id}/xml" }
+              {
+                "openapi": "GET /documents/{id}/pdf"
+              },
+              {
+                "openapi": "GET /documents/{id}/xml"
+              }
             ]
           },
           {
             "group": "Webhooks",
             "pages": [
-              { "openapi": "GET /webhooks" },
-              { "openapi": "POST /webhooks" },
-              { "openapi": "DELETE /webhooks/{id}" }
+              {
+                "openapi": "GET /webhooks"
+              },
+              {
+                "openapi": "POST /webhooks"
+              },
+              {
+                "openapi": "DELETE /webhooks/{id}"
+              }
             ]
           }
         ]
@@ -147,7 +217,13 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor"
+    ]
   },
   "footer": {
     "socials": {
